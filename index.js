@@ -9,7 +9,6 @@ if (args.help) {
 
 scrape(args.fname, args.lname, args.age, args.gender).then((runner) => {
   if (runner === null) {
-    console.log('Failed to find runner');
     return;
   }
   console.log(runner);
