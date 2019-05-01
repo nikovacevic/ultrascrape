@@ -1,0 +1,15 @@
+{
+  "name": "ultrascraper",
+  "version": "0.0.1",
+  "description": "Scrape Ultrasignup for race results",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "Niko Kovacevic <nikovacevic@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "moment": "^2.24.0"
+  }
+}
