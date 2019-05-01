@@ -98,3 +98,8 @@ $nvm use
 Found '/Users/niko/Code/Javascript/ultrascrape/.nvmrc' with version <lts/dubnium>
 Now using node v10.15.3 (npm v6.4.1)
 ```
+
+Install npm packages
+```
+$npm install
+```
