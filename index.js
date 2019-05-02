@@ -1,6 +1,6 @@
 const helpMessage = `
-CLI: node cli.js --help
-API: node api.js
+CLI: node cli --help
+API: node api [-p 3000]
 `;
 
 console.log(helpMessage);
