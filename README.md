@@ -159,6 +159,19 @@ $node index.js -i 944702
  • North Face Endurance Challenge - Bellingham - 50K 2 place in 5:30:25
 ```
 
+Get some help with `--help`
+```
+$node index.js --help
+
+Usage: node index.js [options]
+
+Options:
+  -n, --name [name]               search by runner name (first and last required)
+  -b, --birthday [YYYY-MM-DD]     filter search by birthday
+  -g, --gender [male|female]      filter search by gender
+  -i, --id [id]                   search (or filter) by runner ID (not exactly easy to find)
+```
+
 ## Development
 
 ### Set up
