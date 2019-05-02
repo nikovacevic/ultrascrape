@@ -118,7 +118,46 @@ $node index.js -n Daniel Harris -g male -b 1983-01-01
 
 The number to the left of the runner's name is their ID.
 
-*Note: Ultrasignup is dumb and if you ask for a runner by ID without a first name and last name, it will tell you their name is "a a"*
+Note: Ultrasignup is dumb and if you ask for a runner by ID without a first name and last name, it will tell you their name is "a a":
+```
+$node index.js -i 944702
+1 matches for (name: null null, age: null, gender: null, id: 944702)
+944702: a a
+ • Hardrock 100 Endurance Run - 100 Miler 0 place in 0
+ • Golden Gate Dirty 30 - 50K 0 place in 0
+ • High Lonesome 100 - 100 Miler 1 place in 21:02:59
+ • Quad Rock 50 - 25 Miler 2 place in 3:34:16
+ • Ultra-Trail Du Mont-Blanc - UTMB 22 place in 25:37:33
+ • Golden Gate Dirty 30 - 50K 4 place in 4:58:47
+ • Quad Rock 50 - 50 Miler 1 place in 7:20:27
+ • Gorge Waterfalls 100K - 100K 31 place in 11:52:30
+ • North Face Endurance Challenge - San Francisco - 50 Miler 5 place in 6:32:50
+ • Ultra-Trail Du Mont-Blanc - UTMB 9 place in 23:10:07
+ • Pikes Peak Ultra - 50 Miler 1 place in 8:09:56
+ • Western States - 100 Miler 16 place in 18:16:30
+ • Sean O'Brien 50M/50K/26.2 - 100K 1 place in 8:41:41
+ • Pinhoti - 100 Miler 1 place in 17:19:55
+ • Pikes Peak Ascent - 1/2 Marathon 23 place in 2:29:37
+ • San Juan Solstice 50 - 50 Miler 3 place in 9:17:12
+ • Thunder Rock 100 - 100 Miler 1 place in 17:47:55
+ • Zane Grey 50 - 50K 1 place in 5:13:12
+ • Behind the Rocks Ultra - 50 Miler 1 place in 8:18:20
+ • Mountain Masochist Trail Run - 50 Miler 2 place in 7:19:47
+ • Imogene Pass Run - 17.1 Miler 4 place in 2:32:23
+ • Speedgoat - 50K 10 place in 5:53:51
+ • San Juan Solstice 50 - 50 Miler 7 place in 9:33:42
+ • Golden Gate Dirty 30 - 50K 5 place in 4:50:11
+ • Moab Trail Marathon - Marathon 14 place in 3:34:05
+ • Speedgoat - 50K 14 place in 6:11:16
+ • HURL Elkhorn - 50K 3 place in 4:54:48
+ • Turkey Track Trail - 1/2 Marathon 2 place in 1:35:50
+ • Mountain Masochist Trail Run - 50 Miler 27 place in 8:52:37
+ • Timberline Marathon - Marathon 1 place in 2:53:58
+ • Wakely Dam Ultra - 32.6 Miler 2 place in 5:16:51
+ • North Face Endurance Challenge - New York - 50K 1 place in 4:39:10
+ • Curly's Trail Marathon - Marathon 2 place in 4:15:34
+ • North Face Endurance Challenge - Bellingham - 50K 2 place in 5:30:25
+```
 
 ## Development
 
