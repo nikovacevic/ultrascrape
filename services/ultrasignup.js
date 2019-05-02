@@ -16,7 +16,7 @@ const search = async (fname, lname, age, gender, id) => {
     : `http://ultrasignup.com/service/events.svc/history/${encodeURI(fn)}/${encodeURI(ln)}/`;
   try {
     const res = await axios.get(url);
-    const matches = res.data.filter(r => (!age || r.Age === age) && (!gender || r.Gender === gender) && (!id || r.Id === id))
+    const matches = res.data.filter(r => (age === null || r.Age === age) && (gender === null || r.Gender === gender))
     console.log(`${matches.length} matches for (name: ${fname} ${lname}, age: ${age}, gender: ${gender}, id: ${id})`);
     return matches;
   } catch (e) {

@@ -12,8 +12,16 @@ const parseArgs = (args) => {
   let id = null;
   let age = null;
   let gender = null;
+  let port = 3000;
   // Parse flags into args
-  const flags = ['-h', '--help', '-i', '--id', '-n', '--name', '-b', '--birthday', '-g', '--gender'];
+  const flags = [
+    '-h', '--help',
+    '-i', '--id',
+    '-n', '--name',
+    '-b', '--birthday',
+    '-g', '--gender',
+    '-p', '--port'
+  ];
   let flag = null;
   args.forEach((val) => {
     if (flags.indexOf(val) >= 0) {
@@ -54,9 +62,13 @@ const parseArgs = (args) => {
         console.error(`Failed to parse age from birthday: ${val}`);
       }
     }
+
+    if (flag === '-p' || flag === '--port') {
+      port = parseInt(val);
+    }
   });
 
-  return { help, fname, lname, id, age, gender };
+  return { help, fname, lname, id, age, gender, port };
 };
 
 module.exports = parseArgs;

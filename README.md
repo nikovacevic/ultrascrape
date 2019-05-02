@@ -4,11 +4,19 @@ Query runner data from UltraSignup
 
 ## Finding runners
 
+There are two ways to use UltraScrape: a CLI and an HTTP app.
+```
+$node index.js
+
+CLI: node cli --help
+API: node api [-p 3000]
+```
+
 ### Using the CLI
 
 Specify runner by first and last name using `-n` or `--name` flag:
 ```
-$node index.js -n Nicholas Kovacevic
+$node cli -n Nicholas Kovacevic
 1 matches for (name: Nicholas Kovacevic, age: null, gender: null, id: null)
 985290: Nicholas Kovacevic
  • The Bear - 100 Miler 51 place in 26:43:43
@@ -29,7 +37,7 @@ $node index.js -n Nicholas Kovacevic
 
 Sometimes, more information is needed to specify a single runner:
 ```
-$node index.js -n Daniel Harris
+$node cli -n Daniel Harris
 11 matches for (name: Daniel Harris, age: null, gender: null, id: null)
 989771: Daniel Harris
  • High Lonesome 100 - 100 Miler 0 place in 0
@@ -99,7 +107,7 @@ $node index.js -n Daniel Harris
 
 Use `-b` or `--birthday`, `-g` or `--gender`, or `-i` or `--id` to limit the list:
 ```
-$node index.js -n Daniel Harris -g male -b 1983-01-01
+$node cli -n Daniel Harris -g male -b 1983-01-01
 1 matches for (name: Daniel Harris, age: 36, gender: M, id: null)
 989771: Daniel Harris
  • High Lonesome 100 - 100 Miler 0 place in 0
@@ -120,7 +128,7 @@ The number to the left of the runner's name is their ID.
 
 Note: Ultrasignup is dumb and if you ask for a runner by ID without a first name and last name, it will tell you their name is "a a":
 ```
-$node index.js -i 944702
+$node cli -i 944702
 1 matches for (name: null null, age: null, gender: null, id: 944702)
 944702: a a
  • Hardrock 100 Endurance Run - 100 Miler 0 place in 0
@@ -161,15 +169,27 @@ $node index.js -i 944702
 
 Get some help with `--help`
 ```
-$node index.js --help
+$node cli --help
 
-Usage: node index.js [options]
+Usage: node cli [options]
 
 Options:
   -n, --name [name]               search by runner name (first and last required)
   -b, --birthday [YYYY-MM-DD]     filter search by birthday
   -g, --gender [male|female]      filter search by gender
   -i, --id [id]                   search (or filter) by runner ID (not exactly easy to find)
+```
+
+### Using the app
+
+Start the app. Use `-p` to select a port if you don't like the default `3000`:
+```
+$node api
+UltraScrape listening on port 3000
+```
+```
+$node api -p 5000
+UltraScrape listening on port 5000
 ```
 
 ## Development
