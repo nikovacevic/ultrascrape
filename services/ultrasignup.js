@@ -11,12 +11,12 @@ const axios = require('axios');
 const search = async (fname, lname, age, gender, id) => {
   const fn = fname || 'a';
   const ln = lname || 'a';
-  const url = id
+  const url = (id && !(fname || lname || age || gender))
     ? `http://ultrasignup.com/service/events.svc/history/${encodeURI(fn)}/${encodeURI(ln)}/?pid=${id}`
     : `http://ultrasignup.com/service/events.svc/history/${encodeURI(fn)}/${encodeURI(ln)}/`;
   try {
     const res = await axios.get(url);
-    const matches = res.data.filter(r => (age === null || r.Age === age) && (gender === null || r.Gender === gender))
+    const matches = res.data.filter(r => (age === null || r.Age === age) && (gender === null || r.Gender === gender) && (id === null || r.Id === id))
     console.log(`${matches.length} matches for (name: ${fname} ${lname}, age: ${age}, gender: ${gender}, id: ${id})`);
     return matches;
   } catch (e) {

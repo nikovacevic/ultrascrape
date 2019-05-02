@@ -1,14 +1,16 @@
 doctype html
-html(lang='en')
+html(lang="en")
   head
     title UltraScrape
-    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+    meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+    meta(charset="utf-8")
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous")
   body
     nav.navbar.navbar-light.bg-light
       a.navbar-brand(href="#") UltraScrape
     div.container-fluid
       div.row
-        div.col.col-xs-12.col-sm-12.col-md-4.col-lg-3(style="padding-top: 12px")
+        div.col-xs-12.col-sm-12.col-md-4.col-lg-3(style="padding-top: 12px")
           form(action="/" method="GET")
             div.form-group
               label(for="name") Name
@@ -19,8 +21,9 @@ html(lang='en')
             div.form-group
               label(for="birthday") Birthday
               input#birthday.form-control(type="text" name="birthday" placeholder="YYYY-MM-DD" value=birthday)
+            input(type="hidden" name="search" value="true")
             button.btn.btn-primary(type="submit") Submit
-        div.col.col-xs-12.col-sm-12.col-md-8.col-lg-9(style="padding-top: 12px")
+        div.col-xs-12.col-sm-12.col-md-8.col-lg-9(style="padding-top: 12px")
           if runners.length > 1
             p Found #{runners.length} runner(s)
             ul.list-group.list-group-flush
@@ -46,6 +49,9 @@ html(lang='en')
             div(style="padding-top: 12px")
               a.btn.btn-outline-primary(role="button" href="#") Register results with RMR
           else
-            p.text-muted Search by name (first and last) or ID (if you know it) to find a runner.
+            if search
+              div.alert.alert-dark(role="alert") No results
+            else
+              p.text-muted Search by name (first and last) or ID (if you know it) to find a runner.
 
 

@@ -23,7 +23,7 @@ const getRunners = async query => {
 
     const bd = moment(query.birthday) || null;
     let age = null;
-    if (query.age !== undefined) {
+    if (query.birthday) {
       try {
         age = parseInt(bd.add(6, 'months').fromNow().split(' ')[0]);
       } catch (e) {
@@ -43,7 +43,9 @@ app.get('/', async (req, res) => {
   return res.render('index', {
     runners,
     name: req.query.name || null,
-    id: req.query.id || null
+    id: req.query.id || null,
+    birthday: req.query.birthday || null,
+    search: req.query.search || false
   });
 });
 
