@@ -105,6 +105,12 @@ $node api -p 5000
 UltraScrape listening on port 5000
 ```
 
+Enter a name to search:
+![search](https://github.com/nikovacevic/ultrascrape/tree/master/readme/search.png)
+
+Click a name & ID to view a runner:
+![search](https://github.com/nikovacevic/ultrascrape/tree/master/readme/select.png)
+
 ## Development
 
 ### Set up
