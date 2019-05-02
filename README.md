@@ -106,10 +106,10 @@ UltraScrape listening on port 5000
 ```
 
 Enter a name to search:
-![search](https://github.com/nikovacevic/ultrascrape/tree/master/readme/search.png)
+![search](https://github.com/nikovacevic/ultrascrape/blob/master/readme/search.png)
 
 Click a name & ID to view a runner:
-![search](https://github.com/nikovacevic/ultrascrape/tree/master/readme/select.png)
+![search](https://github.com/nikovacevic/ultrascrape/blob/master/readme/select.png)
 
 ## Development
 
