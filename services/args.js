@@ -9,10 +9,11 @@ const parseArgs = (args) => {
   let help = false;
   let fname = null;
   let lname = null;
+  let id = null;
   let age = null;
   let gender = null;
   // Parse flags into args
-  const flags = ['-h', '--help', '-n', '--name', '-b', '--birthday', '-g', '--gender'];
+  const flags = ['-h', '--help', '-i', '--id', '-n', '--name', '-b', '--birthday', '-g', '--gender'];
   let flag = null;
   args.forEach((val) => {
     if (flags.indexOf(val) >= 0) {
@@ -34,6 +35,10 @@ const parseArgs = (args) => {
       }
     }
 
+    if (flag === '-i' || flag === '--id') {
+      id = parseInt(val);
+    }
+
     if (flag === '-g' || flag === '--gender') {
       gender = val.toUpperCase().slice(0,1);
       if (gender !== 'M' && gender !== 'F') {
@@ -51,7 +56,7 @@ const parseArgs = (args) => {
     }
   });
 
-  return { help, fname, lname, age, gender };
+  return { help, fname, lname, id, age, gender };
 };
 
 module.exports = parseArgs;
