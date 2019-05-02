@@ -6,10 +6,15 @@
   "scripts": {
     "test": "npm test"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nikovacevic/ultrascrape.git"
+  },
   "author": "Niko Kovacevic <nikovacevic@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
+    "express": "^4.16.4",
     "moment": "^2.24.0"
   }
 }
