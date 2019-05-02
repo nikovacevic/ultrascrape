@@ -1,0 +1,51 @@
+doctype html
+html(lang='en')
+  head
+    title UltraScrape
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+  body
+    nav.navbar.navbar-light.bg-light
+      a.navbar-brand(href="#") UltraScrape
+    div.container-fluid
+      div.row
+        div.col.col-xs-12.col-sm-12.col-md-4.col-lg-3(style="padding-top: 12px")
+          form(action="/" method="GET")
+            div.form-group
+              label(for="name") Name
+              input#name.form-control(type="text" name="name" placeholder="First and last" value=name)
+            div.form-group
+              label(for="id") ID
+              input#id.form-control(type="text" name="id" value=id)
+            div.form-group
+              label(for="birthday") Birthday
+              input#birthday.form-control(type="text" name="birthday" placeholder="YYYY-MM-DD" value=birthday)
+            button.btn.btn-primary(type="submit") Submit
+        div.col.col-xs-12.col-sm-12.col-md-8.col-lg-9(style="padding-top: 12px")
+          if runners.length > 1
+            p Found #{runners.length} runner(s)
+            ul.list-group.list-group-flush
+              each runner, i in runners
+                li.list-group-item
+                  h6
+                    - var href = "/?name=" + runner.FirstName + " " + runner.LastName + "&id=" + runner.Id;
+                    a(href=href) #{runner.Id} : #{runner.FirstName} #{runner.LastName} (#{runner.Gender}#{runner.Age})
+                  ul
+                    each result, j in runner.Results
+                      if result.status < 0
+                        li Registered for #{result.eventname}
+                      else
+                        li ##{result.place} at #{result.eventname} in #{result.formattime}
+          else if runners.length == 1
+            - var runner = runners[0]
+            h5 #{runner.Id} : #{runner.FirstName} #{runner.LastName} (#{runner.Gender}#{runner.Age})
+            each result, j in runner.Results
+              if result.status < 0
+                li Registered for #{result.eventname}
+              else
+                li ##{result.place} at #{result.eventname} in #{result.formattime}
+            div(style="padding-top: 12px")
+              a.btn.btn-outline-primary(role="button" href="#") Register results with RMR
+          else
+            p.text-muted Search by name (first and last) or ID (if you know it) to find a runner.
+
+
