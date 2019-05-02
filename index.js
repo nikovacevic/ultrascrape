@@ -15,8 +15,6 @@ if (args.help) {
   // TODO print help
 }
 
-console.log(args);
-
 us.search(args.fname, args.lname, args.age, args.gender, args.id)
   .then((runners) => { runners.forEach(logRunner); })
   .catch((e) => console.error(e));
